@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?= $lang ?>"> <!-- Langue dynamique -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,22 +21,15 @@
 <body class="antialiased" id="page-top">
 <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
 
-   
-            <div class="mb-6 p-6 text-center  border-b border-gray-200">
-                <a href="index.php?lang=fr" class="font-semibold text-gray-700 hover:text-blue-600 px-2">Français</a>
-                <span class="text-gray-400">|</span>
-                <a href="index.php?lang=en" class="font-semibold text-gray-700 hover:text-blue-600 px-2">English</a>
-            </div>
- 
-         
     <!-- En-tête de la page -->
     <div class="flex justify-center my-8">
         <a href = "https://ousrah.portal-edu.com/cv/">
             <div class="flex items-center space-x-4">
                 <img src="me2.png" alt="Photo de F. Rahmouni Oussama" class="w-24 h-24 rounded-full border-2 border-gray-300 p-px">
                 <div>
-                    <p class="font-bold text-lg text-gray-800">Par F. Rahmouni Oussama</p>
-                    <p class="text-sm text-gray-600">Formateur en Développement Informatique & Data Science, ISMO</p>
+                    <!-- Texte traduit -->
+                    <p class="font-bold text-lg text-gray-800"><?= htmlspecialchars($strings['author_byline']) ?></p>
+                    <p class="text-sm text-gray-600"><?= htmlspecialchars($strings['author_title']) ?></p>
                 </div>
             </div>
         </a>
@@ -45,7 +37,8 @@
 
     <div class="mb-12">
         <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 text-center"><?= htmlspecialchars(COURSE_TITLE) ?></h1>
-        <h3 class="pt-4 text-md md:text-md font-extrabold text-gray-500 text-right">Dernière mise à jour : <?= htmlspecialchars(COURSE_LAST_UPDATE) ?></h3>
+        <!-- Texte traduit -->
+        <h3 class="pt-4 text-md md:text-md font-extrabold text-gray-500 text-right"><?= htmlspecialchars($strings['last_update']) ?>: <?= htmlspecialchars(COURSE_LAST_UPDATE) ?></h3>
         
         <div class="flex justify-center my-8">
              <!-- ... (Contenu de la bio de l'auteur) ... -->
@@ -53,7 +46,8 @@
 
         <!-- SOMMAIRE DYNAMIQUE -->
         <div class="bg-white rounded-lg shadow-sm border p-6 my-8">
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Parcours d'apprentissage</h3>
+            <!-- Texte traduit -->
+            <h3 class="text-xl font-bold text-gray-800 mb-4"><?= htmlspecialchars($strings['toc_title']) ?></h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 text-gray-700">
                 <?php
                 $parts_count = count($course_parts);
@@ -80,10 +74,10 @@
                     </div>
                 <?php $i++; endforeach; ?>
                   <div>
-                  <a href="#conclusion"><h4 class="font-semibold text-gray-900">Conclusion & Perspectives</h4></a>
+                  <!-- Texte traduit -->
+                  <a href="#conclusion"><h4 class="font-semibold text-gray-900"><?= htmlspecialchars($strings['conclusion_link']) ?></h4></a>
                   </div>
                 </div><!-- Fin Colonne 2 -->
             </div>
         </div>
-
     </div>
