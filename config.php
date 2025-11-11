@@ -1,6 +1,6 @@
 <?php
 // Configuration générale du cours
-define('COURSE_TITLE', 'Création d\'une Application Laravel 12 Multi-Tenant de A à Z');
+define('COURSE_TITLE', 'Création d\'une Application Laravel 12 Multi-Tenant, dynamique thèmes et développement modulaire  de A à Z');
 define('COURSE_AUTHOR', 'F. Rahmouni Oussama');
 define('COURSE_LAST_UPDATE', 'Novembre 2025');
 
