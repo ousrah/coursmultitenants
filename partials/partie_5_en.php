@@ -25,13 +25,13 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 
-                // Theme Lineone 1
-                'resources/views/themes/lineone1/assets/css/app.css',
-                'resources/views/themes/lineone1/assets/js/app.js',
+                // Theme minimalist
+                'resources/views/themes/minimalist/assets/css/app.css',
+                'resources/views/themes/minimalist/assets/js/app.js',
 
-                // Theme Lineone 2
-                'resources/views/themes/lineone2/assets/css/app.css',
-                'resources/views/themes/lineone2/assets/js/app.js',
+                // Theme modern
+                'resources/views/themes/modern/assets/css/app.css',
+                'resources/views/themes/modern/assets/js/app.js',
             ],
             refresh: true,
         }),
@@ -95,14 +95,14 @@ class ThemeManager
     public function getCurrentThemeSlug(): string
     {
         if (!tenancy()->initialized || !tenancy()->tenant) {
-            return 'lineone1'; // Default theme for central app or if no tenant
+            return 'minimalist'; // Default theme for central app or if no tenant
         }
 
         $cacheKey = 'tenant_theme_' . tenancy()->tenant->getTenantKey();
 
         return Cache::rememberForever($cacheKey, function () {
             $themeSetting = Setting::where('key', 'theme')->first()?->value;
-            return $themeSetting ?? 'lineone1';
+            return $themeSetting ?? 'minimalist';
         });
     }
 }</code></pre>
@@ -135,7 +135,7 @@ class ThemeServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
-            $themeComponentPath = resource_path('views/themes/lineone1/components');
+            $themeComponentPath = resource_path('views/themes/minimalist/components');
             if (is_dir($themeComponentPath)) {
                 Blade::anonymousComponentPath($themeComponentPath, 'theme');
             }
