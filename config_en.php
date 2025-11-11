@@ -1,6 +1,6 @@
 <?php
 // General course configuration
-define('COURSE_TITLE', 'Building a Laravel 12 Multi-Tenant, Dynamic Theming and Modular Application from A to Z');
+define('COURSE_TITLE', 'Laravel Saas - Building a Laravel 12 Multi-Tenant, Dynamic Theming and Modular Application from A to Z');
 define('COURSE_AUTHOR', 'F. Rahmouni Oussama');
 define('COURSE_LAST_UPDATE', 'November 2025');
 
