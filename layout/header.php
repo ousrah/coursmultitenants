@@ -30,6 +30,7 @@
                     <!-- Texte traduit -->
                     <p class="font-bold text-lg text-gray-800"><?= htmlspecialchars($strings['author_byline']) ?></p>
                     <p class="text-sm text-gray-600"><?= htmlspecialchars($strings['author_title']) ?></p>
+                    <p class="text-sm text-blue-500" style="text-decoration: underline;"><a href = "https://ousrah.portal-edu.com/#cours">Aller au catalogue de tous les cours</a></p>
                 </div>
             </div>
         </a>
